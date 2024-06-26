@@ -23,6 +23,7 @@ modules:
     keys:
       - https://repo.vivaldi.com/archive/linux_signing_key.pub
     install:
+      - chromium
       - keyd
       - vivaldi
       - wezterm
