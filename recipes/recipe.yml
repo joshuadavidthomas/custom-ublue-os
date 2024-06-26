@@ -14,7 +14,6 @@ modules:
     files:
       - etc: /etc
       - usr: /usr
-      - var: /var
 
   - type: rpm-ostree
     repos:
