@@ -43,6 +43,16 @@ modules:
       # repo-name: flathub
       # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
+        - com.discordapp.Discord
+        - com.github.IsmaelMartinez.teams_for_linux
+        - com.github.zocker_160.SyncThingy
+        - com.slack.Slack
+        - com.spotify.Client
+        - io.httpie.Httpie
+        - md.obsidian.Obsidian
+        - org.fkoehler.KTailctl
+        - org.libreoffice.LibreOffice
+        - us.zoom.Zoom.desktop
         # - org.mozilla.firefox
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
@@ -59,6 +69,11 @@ modules:
   - type: bling
     install:
       - 1password
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - NerdFontsSymbolsOnly
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
