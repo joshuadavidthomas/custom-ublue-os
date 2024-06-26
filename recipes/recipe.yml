@@ -26,7 +26,6 @@ modules:
       - keyd
       - vivaldi
       - wezterm
-      - yadm
       # - micro
       # - starship
     remove:
