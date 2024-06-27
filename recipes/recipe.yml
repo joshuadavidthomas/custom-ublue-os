@@ -25,7 +25,7 @@ modules:
     install:
       - chromium
       - keyd
-      - vivaldi
+      - vivaldi-stable
       - wezterm
       # - micro
       # - starship
