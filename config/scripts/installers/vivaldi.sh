@@ -24,7 +24,7 @@ rpm-ostree install vivaldi-"$RELEASE_CHANNEL"
 
 rm -f /etc/yum.repos.d/vivaldi.repo
 
-mv /var/opt/1Password /usr/lib/vivaldi
+mv /var/opt/vivaldi /usr/lib/vivaldi
 
 rm /usr/bin/{vivaldi,vivaldi-"$RELEASE_CHANNEL"}
 ln -s /opt/vivaldi/vivaldi /usr/bin/vivaldi
