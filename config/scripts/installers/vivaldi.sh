@@ -24,11 +24,20 @@ rpm-ostree install vivaldi-"$RELEASE_CHANNEL"
 
 find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
 
+# Move Vivaldi binary to /usr/bin
 mv /var/opt/vivaldi/vivaldi /usr/bin/
+mv /var/opt/vivaldi/vivaldi-"$RELEASE_CHANNEL" /usr/bin/
 
+# Move Vivaldi lib files to /usr/lib/vivaldi
 mkdir -p /usr/lib/vivaldi
-mv /var/opt/vivaldi /usr/lib/
+mv /var/opt/vivaldi/* /usr/lib/vivaldi/
 
+# Set up tmpfiles.d configuration
+cat >/usr/lib/tmpfiles.d/vivaldi.conf <<EOF
+L /var/opt/vivaldi - - - - /usr/lib/vivaldi
+EOF
+
+# Clean up
 rm -f /etc/yum.repos.d/vivaldi.repo
 
 find /usr/lib -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
