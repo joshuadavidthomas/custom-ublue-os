@@ -22,6 +22,8 @@ rpm --import https://repo.vivaldi.com/archive/linux_signing_key.pub
 
 rpm-ostree install vivaldi-"$RELEASE_CHANNEL"
 
+find / -type d -name 'vivaldi'
+
 rm -f /etc/yum.repos.d/vivaldi.repo
 
 mv /var/opt/vivaldi /usr/lib/vivaldi
