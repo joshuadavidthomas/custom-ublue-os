@@ -30,16 +30,18 @@ mv /var/opt/vivaldi/vivaldi /usr/bin/
 # Create symlink for vivaldi-stable if it doesn't exist
 ln -sf /usr/bin/vivaldi /usr/bin/vivaldi-"$RELEASE_CHANNEL"
 
-# Move Vivaldi lib files to /usr/lib/vivaldi
+# Move Vivaldi files to /usr/lib/vivaldi
 mkdir -p /usr/lib/vivaldi
 mv /var/opt/vivaldi/* /usr/lib/vivaldi/
 
+# Create necessary symlinks
+ln -sf /usr/lib/vivaldi/vivaldi /usr/bin/vivaldi
+ln -sf /usr/lib/vivaldi/vivaldi-stable /usr/bin/vivaldi-stable
+ln -sf /usr/lib/vivaldi/vivaldi-bin /usr/bin/vivaldi-bin
+
 # Set up tmpfiles.d configuration
-cat <<EOF >/usr/lib/tmpfiles.d/vivaldi.conf
+cat >/usr/lib/tmpfiles.d/vivaldi.conf <<EOF
 L /var/opt/vivaldi - - - - /usr/lib/vivaldi
 EOF
-
-# Clean up
-rm -f /etc/yum.repos.d/vivaldi.repo
 
 find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
