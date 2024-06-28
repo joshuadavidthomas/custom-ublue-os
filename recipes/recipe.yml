@@ -12,7 +12,7 @@ image-version: 40 # latest is also supported if you want new updates ASAP
 modules:
   - type: files
     files:
-      - etc: /etc
+      # - etc: /etc
       - usr: /usr
 
   - type: rpm-ostree
