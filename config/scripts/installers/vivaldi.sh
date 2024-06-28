@@ -25,10 +25,9 @@ rpm-ostree install vivaldi-"$RELEASE_CHANNEL"
 find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
 
 mv /var/opt/vivaldi/vivaldi /usr/bin/
-mv /var/opt/vivaldi/vivaldi-"$RELEASE_CHANNEL" /usr/bin/
 
 mkdir -p /usr/lib/vivaldi
-mv /var/opt/vivaldi/* /usr/lib/vivaldi/
+mv /var/opt/vivaldi /usr/lib/
 
 rm -f /etc/yum.repos.d/vivaldi.repo
 
