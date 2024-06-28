@@ -22,7 +22,7 @@ rpm --import https://repo.vivaldi.com/archive/linux_signing_key.pub
 
 rpm-ostree install vivaldi-"$RELEASE_CHANNEL"
 
-find / -type d -name 'vivaldi'
+find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
 
 rm -f /etc/yum.repos.d/vivaldi.repo
 
@@ -36,4 +36,4 @@ cat >/usr/lib/tmpfiles.d/vivaldi.conf <<EOF
 L  /opt/vivaldi  -  -  -  -  /usr/lib/vivaldi
 EOF
 
-find / -type d -name 'vivaldi'
+find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
