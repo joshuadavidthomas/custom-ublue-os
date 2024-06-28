@@ -35,3 +35,5 @@ ln -s /opt/vivaldi/vivaldi-"$RELEASE_CHANNEL" /usr/bin/vivaldi-"$RELEASE_CHANNEL
 cat >/usr/lib/tmpfiles.d/vivaldi.conf <<EOF
 L  /opt/vivaldi  -  -  -  -  /usr/lib/vivaldi
 EOF
+
+find / -type d -name 'vivaldi'
