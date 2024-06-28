@@ -11,7 +11,7 @@ mkdir -p /var/opt
 
 cat <<EOF >/etc/yum.repos.d/vivaldi.repo
 [vivaldi]
-baseurl=https://repo.vivaldi.com/archive/rpm/$basearch
+baseurl=https://repo.vivaldi.com/archive/rpm/\$basearch
 enabled=1
 gpgcheck=1
 gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
