@@ -26,14 +26,15 @@ find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
 
 rm -f /etc/yum.repos.d/vivaldi.repo
 
-mv /var/opt/vivaldi /usr/lib/vivaldi
-
-rm /usr/bin/{vivaldi,vivaldi-"$RELEASE_CHANNEL"}
-ln -s /opt/vivaldi/vivaldi /usr/bin/vivaldi
-ln -s /opt/vivaldi/vivaldi-"$RELEASE_CHANNEL" /usr/bin/vivaldi-"$RELEASE_CHANNEL"
-
-cat >/usr/lib/tmpfiles.d/vivaldi.conf <<EOF
-L  /opt/vivaldi  -  -  -  -  /usr/lib/vivaldi
-EOF
-
-find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
+# mv /var/opt/vivaldi /usr/lib/vivaldi
+#
+# rm /usr/bin/vivaldi
+# rm /usr/bin/vivaldi-"$RELEASE_CHANNEL"
+# ln -s /opt/vivaldi/vivaldi /usr/bin/vivaldi
+# ln -s /opt/vivaldi/vivaldi-"$RELEASE_CHANNEL" /usr/bin/vivaldi-"$RELEASE_CHANNEL"
+#
+# cat >/usr/lib/tmpfiles.d/vivaldi.conf <<EOF
+# L  /opt/vivaldi  -  -  -  -  /usr/lib/vivaldi
+# EOF
+#
+# find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
