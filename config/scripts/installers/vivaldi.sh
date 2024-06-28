@@ -28,7 +28,7 @@ find / -name 'vivaldi*' 2>&1 | grep -v 'Permission denied' >&2
 mkdir -p /usr/lib/vivaldi
 
 # Move Vivaldi directory contents to /usr/lib/vivaldi/
-mv /var/opt/vivaldi/* /usr/lib/vivaldi/
+mv /var/opt/vivaldi /usr/lib/
 
 # Create necessary symlinks
 ln -sf /usr/lib/vivaldi/vivaldi-bin /usr/bin/vivaldi-bin
