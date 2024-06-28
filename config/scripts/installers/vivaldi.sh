@@ -22,26 +22,22 @@ rpm --import https://repo.vivaldi.com/archive/linux_signing_key.pub
 
 rpm-ostree install vivaldi-"$RELEASE_CHANNEL"
 
-find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
+find / -name 'vivaldi*' 2>&1 | grep -v 'Permission denied' >&2
 
-# Move Vivaldi binary to /usr/bin
-mv /var/opt/vivaldi/vivaldi /usr/bin/
-
-# Create symlink for vivaldi-stable if it doesn't exist
-ln -sf /usr/bin/vivaldi /usr/bin/vivaldi-"$RELEASE_CHANNEL"
-
-# Move Vivaldi files to /usr/lib/vivaldi
+# Ensure the destination directory exists
 mkdir -p /usr/lib/vivaldi
-mv /var/opt/vivaldi /usr/lib/
+
+# Move Vivaldi directory contents to /usr/lib/vivaldi/
+mv /var/opt/vivaldi/* /usr/lib/vivaldi/
 
 # Create necessary symlinks
-ln -sf /usr/lib/vivaldi/vivaldi /usr/bin/vivaldi
-ln -sf /usr/lib/vivaldi/vivaldi-stable /usr/bin/vivaldi-stable
 ln -sf /usr/lib/vivaldi/vivaldi-bin /usr/bin/vivaldi-bin
+ln -sf /usr/lib/vivaldi/vivaldi-bin /usr/bin/vivaldi
+ln -sf /usr/lib/vivaldi/vivaldi-bin /usr/bin/vivaldi-stable
 
 # Set up tmpfiles.d configuration
 cat >/usr/lib/tmpfiles.d/vivaldi.conf <<EOF
 L /var/opt/vivaldi - - - - /usr/lib/vivaldi
 EOF
 
-find / -type d -name 'vivaldi' 2>&1 | grep -v 'Permission denied' >&2
+find / -name 'vivaldi*' 2>&1 | grep -v 'Permission denied' >&2
