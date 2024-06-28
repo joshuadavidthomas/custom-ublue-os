@@ -32,7 +32,7 @@ ln -sf /usr/bin/vivaldi /usr/bin/vivaldi-"$RELEASE_CHANNEL"
 
 # Move Vivaldi files to /usr/lib/vivaldi
 mkdir -p /usr/lib/vivaldi
-mv /var/opt/vivaldi/* /usr/lib/vivaldi/
+mv /var/opt/vivaldi /usr/lib/
 
 # Create necessary symlinks
 ln -sf /usr/lib/vivaldi/vivaldi /usr/bin/vivaldi
