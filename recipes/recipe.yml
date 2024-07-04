@@ -24,6 +24,21 @@ modules:
       - chromium
       - keyd
       - wezterm
+      # for pyenv
+      - bzip2
+      - bzip2-devel
+      - gcc
+      - libffi-devel
+      - make
+      - openssl-devel
+      - patch
+      - readline-devel
+      - sqlite
+      - sqlite-devel
+      - tk-devel
+      - zlib-ng-compat
+      - zlib-ng-compat-devel
+      - xz-devel
       # - micro
       # - starship
     remove:
