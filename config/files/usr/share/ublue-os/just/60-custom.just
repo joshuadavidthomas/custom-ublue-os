@@ -1,6 +1,6 @@
 custom-setup:
     #!/usr/bin/env bash
-    
+
     WAKAPI_API_URL=$(gum input --value "https://wakapi.app.joshthomas.cool/api")
     WAKAPI_API_KEY=$(gum input --placeholder "Wakapi API Key")
 
