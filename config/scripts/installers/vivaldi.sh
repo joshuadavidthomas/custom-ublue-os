@@ -43,3 +43,5 @@ L /var/opt/vivaldi - - - - /usr/lib/vivaldi
 EOF
 
 find / -name 'vivaldi*' 2>&1 | grep -v 'Permission denied' >&2
+
+xdg-settings set default-web-browser vivaldi.desktop
