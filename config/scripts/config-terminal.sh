@@ -6,7 +6,13 @@ sed -i '/<entry name="launchers" type="StringList">/,/<\/entry>/ s/<default>[^<]
 sed -i '/<entry name="favorites" type="StringList">/,/<\/entry>/ s/<default>[^<]*<\/default>/<default>preferred:\/\/browser,applications:org.wezfurlong.wezterm.desktop,systemsettings.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.discover.desktop<\/default>/' /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/config/main.xml
 
 sed -i 's@Keywords=@Keywords=konsole;console;@g' /usr/share/applications/org.wezfurlong.wezterm.desktop
-sed -i '${/\[Desktop Action new-window\]/!s/$/\n\n[Desktop Action new-window]\nX-KDE-Shortcuts=Ctrl+Alt+T/}' /usr/share/applications/org.wezfurlong.wezterm.desktop
+cat <<EOF >>/usr/share/applications/org.wezfurlong.wezterm.desktop
+
+[Desktop Action new-window]
+X-KDE-Shortcuts=Ctrl+Alt+T
+Name=New Window
+Exec=wezterm start
+EOF
 cp /usr/share/applications/org.wezfurlong.wezterm.desktop /usr/share/kglobalaccel/org.wezfurlong.wezterm.desktop
 
 sed -i '/X-KDE-Shortcuts=Ctrl+Alt+T/d' /usr/share/applications/org.gnome.Ptyxis.desktop
