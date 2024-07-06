@@ -16,3 +16,16 @@ custom-setup:
     api_url = $WAKAPI_API_URL
     api_key = $WAKAPI_API_KEY
     EOF
+
+    cat <<EOF >~/.config/mimeapps.list
+    [Added Associations]
+    x-scheme-handler/http=vivaldi-stable.desktop;
+    x-scheme-handler/https=vivaldi-stable.desktop;
+
+    [Default Applications]
+    text/html=org.mozilla.firefox.desktop
+    x-scheme-handler/http=vivaldi-stable.desktop;
+    x-scheme-handler/https=vivaldi-stable.desktop;
+    EOF
+
+    update-mime-database /usr/share/mime
