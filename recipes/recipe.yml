@@ -80,10 +80,10 @@ modules:
       # - org.gnome.eog
 
   - type: script
-    snippets:
-      - "curl -fLo /usr/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x /usr/bin/yadm"
     scripts:
-      - installers/vivaldi.sh
+      - config-terminal.sh
+      - install-vivaldi.sh
+      - install-yadm.sh
 
   - type: bling
     install:
