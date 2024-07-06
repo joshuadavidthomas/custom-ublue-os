@@ -8,6 +8,7 @@ widgetStyle=Breeze
 kcm_plymouth.desktop=false
 
 [General]
+BrowserApplication=vivaldi-stable.desktop
 TerminalApplication=wezterm
 TerminalService=org.wezfurlong.wezterm.desktop
 desktopFont=Noto Sans,10,-1,5,50,0,0,0,0,0
