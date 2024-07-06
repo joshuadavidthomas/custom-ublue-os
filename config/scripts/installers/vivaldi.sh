@@ -44,4 +44,4 @@ EOF
 
 find / -name 'vivaldi*' 2>&1 | grep -v 'Permission denied' >&2
 
-xdg-settings set default-web-browser vivaldi.desktop
+sed -i 's/org\.mozilla\.firefox\.desktop/vivaldi.desktop/g' /usr/share/kde-settings/kde-profile/default/xdg/kde-mimeapps.list
